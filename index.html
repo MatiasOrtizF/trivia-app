@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Quiz</title>
+
+    <link rel="icon" href="img/quiz-logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+    <main>
+        <!-- login  -->
+        <div class="login hidden">
+            <img src="img/quiz-logo.png" alt="logo">
+            <form action="" method="POST" id="form">
+                <input text="text" id="user-name" placeholder="nombre de usuario">
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+        <!-- login end -->
+
+        <!---------------------------------------------------->
+
+        <!-- Quiz -->
+        <div class="select-categorys hidden">
+            <h1>Quiz App</h1>
+
+            <img src="img/quiz-logo.png" alt="logo">
+            <div class="category">
+                <button id="deporte">Deporte</button>
+                <button id="videos-juegos">Videos Juegos</button>
+                <button id="historia">Historia</button>
+                <button id="series-peliculas">Series-Peliculas</button>
+
+                <!-- <button>Enviar</button> -->
+            </div>
+        </div>
+
+        <!---------------------------------------------------->
+
+        <div class="question ">
+            <h2>Deportes</h2>
+            <div class="question-time">
+                <p>Quiz:<span id="quizNum"></span></p>
+                <p id="seconds"></p>
+            </div>
+            <hr>
+
+            <div class="preguntaNumero1 ">
+                <p class="pregunta">1. ¿De que nacionalidad es el tenista Roger Federer?</p>
+
+                <div class="questions-list">
+                    <button class="a">Serbio</button>
+                    <button class="b">Español</button>
+                    <button class="c">Suizo</button>
+                    <button class="d">Sueco</button>
+                </div>
+            </div>
+
+            <div class="preguntaNumero2 hidden">
+                <p class="pregunta">2. ¿En cual estos clube nunca jugo el futbolista kaka?</p>
+
+                <div class="questions-list">
+                    <button class="a">Milan</button>
+                    <button class="b">Real Madrid</button>
+                    <button class="c">Sao Paulo</button>
+                    <button class="d">Fluminense</button>
+                </div>
+            </div>
+            <div class="preguntaNumero3 hidden">
+                <p class="pregunta">3. ¿A que deporte se dedicaba niki lauda?</p>
+
+                <div class="questions-list">
+                    <button class="a">Carreras</button>
+                    <button class="b">Golf</button>
+                    <button class="c">Basket</button>
+                    <button class="d">Tennis</button>
+                </div>
+            </div>
+            <div class="preguntaNumero4 hidden">
+                <p class="pregunta">4. ¿De que nacionalidad es el futolista Luka Modrid?</p>
+
+                <div class="questions-list">
+                    <button class="a">Estonio</button>
+                    <button class="b">Serbio</button>
+                    <button class="c">Bosnio</button>
+                    <button class="d">Croata</button>
+                </div>
+            </div>
+            <div class="preguntaNumero5 hidden">
+                <p class="pregunta">5. ¿Que seleccion de futbol masculino nunca gano una copa america?</p>
+
+                <div class="questions-list">
+                    <button class="a">Paraguay</button>
+                    <button class="b">Colombia</button>
+                    <button class="c">Ecuador</button>
+                    <button class="d">Bolivia</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz end -->
+
+        <!---------------------------------------------------->
+
+        <!-- Contragulations -->
+
+        <div class="congratulations hidden">
+            <p>Felicidades <span class="name"></span>Matias respondiste 20 preguntas correctamente entraste en el raking</p>
+            <button id="ver-ranking">Ver Ranking</button>
+        </div>
+
+        <!-- Congragulations end-->
+
+        <!---------------------------------------------------->
+
+        <!-- List Users -->
+
+
+        <div class="users-list hidden">
+            <div class="ranking">
+                <h2>Ranking</h2>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Nombre</th>
+                            <th>Tiempo</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Dibu</td>
+                            <td>59</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Cuti</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ota</td>
+                            <td>59</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Licha</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huevo</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Nahuel</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Taglia</td>
+                            <td>59</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Enzo</td>
+                            <td>50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Users List end -->
+
+    </main>
+</body>
+
+<script src="js/main.js"></script>
+
+</html>

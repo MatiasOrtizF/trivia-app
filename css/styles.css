@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*GLOBALES*/
+h1 {
+    margin-bottom: 7px;
+}
+img {
+    width: 40%;
+}
+
+::placeholder {
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+input {
+    padding: 5px;
+    border-radius: 10px;
+    border-color: wheat;
+}
+
+button {
+    padding: 7px;
+    border-radius: 20px;
+    color: white;
+    background-color: orange;
+    border-color: orange;
+    width: 100%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login img {
+    margin-bottom: 4em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 9em;
+}
+
+/* Select Category */
+.category {
+    padding: 10px;
+}
+.category button {
+    margin: 7px 10px;
+    background-color: rgb(11, 14, 56);
+    padding: 10px;
+}
+.select-categorys img {
+    margin: 15px 0px;
+}
+/* .category button:last-child {
+    background-color: orange;
+    text-transform: uppercase;
+} */
+
+
+/* Questions */
+.question {
+    width: 250px;
+}
+
+.question button {
+    color: black;
+    padding: 10px;
+}
+
+.question-time {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+}
+
+.pregunta {
+    padding: 50px 0px;
+}
+
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* congratulations */
+.congratulations p {
+    font-size: 18px;
+    padding: 10px;
+}
+.congratulations button{  
+        text-transform: uppercase;
+        width: 80%;
+}
+
+/* users list*/
+.users-list {
+    background-color: aliceblue;
+    color: black;
+    border-radius: 10px;
+}
+.ranking {
+    background-color: rgb(236, 226, 218);
+}
+table {
+    padding: 20px 5px;
+    width: 250px;
+}
+
+
+
+.hidden {
+    display: none;
+}
