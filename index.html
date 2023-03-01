@@ -44,7 +44,7 @@
 
         <!---------------------------------------------------->
 
-        <div class="question ">
+        <div class="question hidden">
             <h2>Deportes</h2>
             <div class="question-time">
                 <p>Quiz:<span id="quizNum"></span></p>
@@ -53,54 +53,54 @@
             <hr>
 
             <div class="preguntaNumero1 ">
-                <p class="pregunta">1. ¿De que nacionalidad es el tenista Roger Federer?</p>
+                <p class="pregunta" id="pregunta1">   </p>
 
                 <div class="questions-list">
-                    <button class="a">Serbio</button>
-                    <button class="b">Español</button>
-                    <button class="c">Suizo</button>
-                    <button class="d">Sueco</button>
+                    <button class="a" id="respuestaA1"></button>
+                    <button class="b" id="respuestaB1"></button>
+                    <button class="c" id="respuestaC1"></button>
+                    <button class="d" id="respuestaD1"></button>
                 </div>
             </div>
 
             <div class="preguntaNumero2 hidden">
-                <p class="pregunta">2. ¿En cual estos clube nunca jugo el futbolista kaka?</p>
+                <p class="pregunta" id="pregunta2">   </p>
 
                 <div class="questions-list">
-                    <button class="a">Milan</button>
-                    <button class="b">Real Madrid</button>
-                    <button class="c">Sao Paulo</button>
-                    <button class="d">Fluminense</button>
+                    <button class="a" id="respuestaA2"></button>
+                    <button class="b" id="respuestaB2"></button>
+                    <button class="c" id="respuestaC2"></button>
+                    <button class="d" id="respuestaD2"></button>
                 </div>
             </div>
             <div class="preguntaNumero3 hidden">
-                <p class="pregunta">3. ¿A que deporte se dedicaba niki lauda?</p>
+                <p class="pregunta" id="pregunta3">   </p>
 
                 <div class="questions-list">
-                    <button class="a">Carreras</button>
-                    <button class="b">Golf</button>
-                    <button class="c">Basket</button>
-                    <button class="d">Tennis</button>
+                    <button class="a" id="respuestaA3"></button>
+                    <button class="b" id="respuestaB3"></button>
+                    <button class="c" id="respuestaC3"></button>
+                    <button class="d" id="respuestaD3"></button>
                 </div>
             </div>
             <div class="preguntaNumero4 hidden">
-                <p class="pregunta">4. ¿De que nacionalidad es el futolista Luka Modrid?</p>
+                <p class="pregunta" id="pregunta4">   </p>
 
                 <div class="questions-list">
-                    <button class="a">Estonio</button>
-                    <button class="b">Serbio</button>
-                    <button class="c">Bosnio</button>
-                    <button class="d">Croata</button>
+                    <button class="a" id="respuestaA4"></button>
+                    <button class="b" id="respuestaB4"></button>
+                    <button class="c" id="respuestaC4"></button>
+                    <button class="d" id="respuestaD4"></button>
                 </div>
             </div>
             <div class="preguntaNumero5 hidden">
-                <p class="pregunta">5. ¿Que seleccion de futbol masculino nunca gano una copa america?</p>
+                <p class="pregunta" id="pregunta5">   </p>
 
                 <div class="questions-list">
-                    <button class="a">Paraguay</button>
-                    <button class="b">Colombia</button>
-                    <button class="c">Ecuador</button>
-                    <button class="d">Bolivia</button>
+                    <button class="a" id="respuestaA5"></button>
+                    <button class="b" id="respuestaB5"></button>
+                    <button class="c" id="respuestaC5"></button>
+                    <button class="d" id="respuestaD5"></button>
                 </div>
             </div>
         </div>
@@ -109,14 +109,19 @@
 
         <!---------------------------------------------------->
 
-        <!-- Contragulations -->
+        <!-- Contragulations or Sorry -->
 
         <div class="congratulations hidden">
-            <p>Felicidades <span class="name"></span>Matias respondiste 20 preguntas correctamente entraste en el raking</p>
+            <p>Felicidades <span class="name"></span>Matias respondiste las 5 preguntas correctamente entraste en el raking</p>
             <button id="ver-ranking">Ver Ranking</button>
         </div>
 
-        <!-- Congragulations end-->
+        <div class="sorry hidden">
+            <p>Lo lamento <span class="name"></span>Matias no respondiste las 5 preguntas correctamente, por lo tanto no entraste al raking</p>
+            <button id="back-play">Volver a jugar</button>
+        </div>
+
+        <!-- Congragulations or Sorry end -->
 
         <!---------------------------------------------------->
 

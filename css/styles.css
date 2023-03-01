@@ -115,6 +115,16 @@ form {
         width: 80%;
 }
 
+/* sorry*/
+.sorry p {
+    font-size: 18px;
+    padding: 10px;
+}
+.sorry button{  
+        text-transform: uppercase;
+        width: 80%;
+}
+
 /* users list*/
 .users-list {
     background-color: aliceblue;
