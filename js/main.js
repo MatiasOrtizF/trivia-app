@@ -462,12 +462,14 @@ const videosJuegos = document.getElementById("videos-juegos");
 const historia = document.getElementById("historia");
 const seriesPeliculas = document.getElementById("series-peliculas");
 
+let categoriaSeleccionada = preguntasDeportes;
+
 
 deportes.addEventListener("click", e=> {
     e.preventDefault()
     selectedCategory.classList.add("hidden");
     question.classList.remove("hidden");
-    // timerd();
+    timerd();
 })
 videosJuegos.addEventListener("click", e=> {
     e.preventDefault()
@@ -485,11 +487,12 @@ seriesPeliculas.addEventListener("click", e=> {
     e.preventDefault()
     selectedCategory.classList.add("hidden");
     question.classList.remove("hidden");
+    categoriaSeleccionada = preguntaSeriesPeliculas;
     // timerd();
 })
 
-// if(!question.classList.contains("hidden")) {
-//     timerd();
+// if(selectedCategory.classList.contains("hidden")) {
+//     console.log("hola");
 // }
 
 var contadores = 0;
@@ -525,7 +528,6 @@ const opcionesC = document.querySelectorAll(".c");
 const opcionesD = document.querySelectorAll(".d");
 
 /*questions*/
-const pregunta1 = document.querySelector(".preguntaNumero1");
 const pregunta2 = document.querySelector(".preguntaNumero2");
 const pregunta3 = document.querySelector(".preguntaNumero3");
 const pregunta4 = document.querySelector(".preguntaNumero4");
@@ -537,6 +539,291 @@ quizNum.innerHTML = questionsAnswered.length+1;
 
 let cont = 1;
 // console.log(quizNum.innerHTML)
+
+/* preguntas a responder */
+
+
+let listaDePreguntasRealizadas = [];
+
+
+contNumeroRandom = 0;
+
+while(contNumeroRandom < 5 ) {
+    let min = 1;
+    let max = 20;
+    let randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+    if(!listaDePreguntasRealizadas.includes(randomNumber)) {
+        listaDePreguntasRealizadas.push(randomNumber);
+        contNumeroRandom++;
+    }
+}
+console.log(listaDePreguntasRealizadas);
+// if(!listaDePreguntasRealizadas.includes(randomNumber)) {
+//     console.log("prosiga");
+// } else {
+//     console.log("se ejecuto esto")
+//     randomNumber;
+// }
+
+
+// console.log(preguntasDeportes[randomNumber].pregunta);
+// console.log(preguntasDeportes[randomNumber].respuestaCorrecta);
+// console.log(preguntasDeportes[randomNumber].respuestas[0]);
+// console.log(preguntasDeportes[randomNumber].respuestas[1]);
+// console.log(preguntasDeportes[randomNumber].respuestas[2]);
+// console.log(preguntasDeportes[randomNumber].respuestas[3]);
+
+
+/*-------------------------------------------------------------------------------------------------*/
+
+/* pregunta 1 */
+// let preguntaRealizada1 = listaDePreguntasRealizadas[0];
+// const preguntaNum1 = document.getElementById("pregunta1");
+// preguntaNum1.innerHTML = "1. "+categoriaSeleccionada[preguntaRealizada1].pregunta;
+// const respuestaCorrectaPregunta1 = categoriaSeleccionada[preguntaRealizada1].respuestaCorrecta;
+
+/* respuestas */
+/* opcion A*/
+/*
+const respuestaA1 = document.getElementById("respuestaA1");
+opcionA1 = categoriaSeleccionada[preguntaRealizada1].respuestas[0];
+respuestaA1.innerHTML = opcionA1 ;
+if(opcionA1 == respuestaCorrectaPregunta1){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion B*/
+/*
+const respuestaB1 = document.getElementById("respuestaB1");
+opcionB1 = categoriaSeleccionada[preguntaRealizada1].respuestas[1];
+respuestaB1.innerHTML = opcionB1;
+if(opcionB1==respuestaCorrectaPregunta1){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion C*/
+/*
+const respuestaC1 = document.getElementById("respuestaC1");
+opcionC1 = categoriaSeleccionada[preguntaRealizada1].respuestas[2]
+respuestaC1.innerHTML = opcionC1;
+if(opcionC1==respuestaCorrectaPregunta1){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion D*/
+/*
+const respuestaD1 = document.getElementById("respuestaD1");
+opcionD1 = categoriaSeleccionada[preguntaRealizada1].respuestas[3]
+respuestaD1.innerHTML = opcionD1;
+if(opcionD1==respuestaCorrectaPregunta1){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}*/
+/*---------------------------------------------------------------------------------------------------------*/
+
+/* pregunta 2*/
+let preguntaRealizada2 = listaDePreguntasRealizadas[1];
+const preguntaNum2 = document.getElementById("pregunta2");
+preguntaNum2.innerHTML = "2. "+categoriaSeleccionada[preguntaRealizada2].pregunta;
+const respuestaCorrectaPregunta2 = categoriaSeleccionada[preguntaRealizada2].respuestaCorrecta;
+
+/* respuestas */
+/* opcion A*/
+const respuestaA2 = document.getElementById("respuestaA2");
+opcionA2 = categoriaSeleccionada[preguntaRealizada2].respuestas[0];
+respuestaA2.innerHTML = opcionA2 ;
+if(opcionA2 ==respuestaCorrectaPregunta2){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion B*/
+const respuestaB2 = document.getElementById("respuestaB2");
+opcionB2 = categoriaSeleccionada[preguntaRealizada2].respuestas[1];
+respuestaB2.innerHTML = opcionB2;
+if(opcionB2==respuestaCorrectaPregunta2){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion C*/
+const respuestaC2 = document.getElementById("respuestaC2");
+opcionC2 = categoriaSeleccionada[preguntaRealizada2].respuestas[2]
+respuestaC2.innerHTML = opcionC2;
+if(opcionC2==respuestaCorrectaPregunta2){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion D*/
+const respuestaD2 = document.getElementById("respuestaD2");
+opcionD2 = categoriaSeleccionada[preguntaRealizada2].respuestas[3]
+respuestaD2.innerHTML = opcionD2;
+if(opcionD2==respuestaCorrectaPregunta2){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+/* pregunta 3*/
+let preguntaRealizada3 = listaDePreguntasRealizadas[2];
+const preguntaNum3 = document.getElementById("pregunta3");
+preguntaNum3.innerHTML = "3. "+categoriaSeleccionada[preguntaRealizada3].pregunta;
+const respuestaCorrectaPregunta3 = categoriaSeleccionada[preguntaRealizada3].respuestaCorrecta;
+
+/* respuestas */
+/* opcion A*/
+const respuestaA3 = document.getElementById("respuestaA3");
+opcionA3 = categoriaSeleccionada[preguntaRealizada3].respuestas[0];
+respuestaA3.innerHTML = opcionA3 ;
+if(opcionA2 ==respuestaCorrectaPregunta3){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion B*/
+const respuestaB3 = document.getElementById("respuestaB3");
+opcionB3 = categoriaSeleccionada[preguntaRealizada3].respuestas[1];
+respuestaB3.innerHTML = opcionB3;
+if(opcionB3==respuestaCorrectaPregunta3){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion C*/
+const respuestaC3 = document.getElementById("respuestaC3");
+opcionC3 = categoriaSeleccionada[preguntaRealizada3].respuestas[2]
+respuestaC3.innerHTML = opcionC3;
+if(opcionC3==respuestaCorrectaPregunta3){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion D*/
+const respuestaD3 = document.getElementById("respuestaD3");
+opcionD3 = categoriaSeleccionada[preguntaRealizada3].respuestas[3]
+respuestaD3.innerHTML = opcionD3;
+if(opcionD3==respuestaCorrectaPregunta3){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+/* pregunta 4*/
+let preguntaRealizada4 = listaDePreguntasRealizadas[3];
+const preguntaNum4 = document.getElementById("pregunta4");
+preguntaNum4.innerHTML = "4. "+categoriaSeleccionada[preguntaRealizada4].pregunta;
+const respuestaCorrectaPregunta4 = categoriaSeleccionada[preguntaRealizada4].respuestaCorrecta;
+
+/* respuestas */
+/* opcion A*/
+const respuestaA4 = document.getElementById("respuestaA4");
+opcionA4 = categoriaSeleccionada[preguntaRealizada4].respuestas[0]
+respuestaA4.innerHTML = opcionA4;
+if(opcionA4==respuestaCorrectaPregunta4){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion B*/
+const respuestaB4 = document.getElementById("respuestaB4");
+opcionB4 = categoriaSeleccionada[preguntaRealizada4].respuestas[1]
+respuestaB4.innerHTML = opcionB4;
+if(opcionB4==respuestaCorrectaPregunta4){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion C*/
+const respuestaC4 = document.getElementById("respuestaC4");
+opcionC4 = categoriaSeleccionada[preguntaRealizada4].respuestas[2]
+respuestaC4.innerHTML = opcionC4;
+if(opcionC4==respuestaCorrectaPregunta4){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion D*/
+const respuestaD4 = document.getElementById("respuestaD4");
+opcionD4 = categoriaSeleccionada[preguntaRealizada4].respuestas[3]
+respuestaD4.innerHTML = opcionD4;
+if(opcionD4==respuestaCorrectaPregunta4){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+
+/* pregunta 5*/
+let preguntaRealizada5 = listaDePreguntasRealizadas[4];
+const preguntaNum5 = document.getElementById("pregunta5");
+preguntaNum5.innerHTML = "5. "+categoriaSeleccionada[preguntaRealizada5].pregunta;
+const respuestaCorrectaPregunta5 = categoriaSeleccionada[preguntaRealizada5].respuestaCorrecta;
+
+/* respuestas */
+/* opcion A*/
+const respuestaA5 = document.getElementById("respuestaA5");
+opcionA5 = categoriaSeleccionada[preguntaRealizada5].respuestas[0];
+respuestaA5.innerHTML = opcionA5 ;
+if(opcionA5 ==respuestaCorrectaPregunta5){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion B*/
+const respuestaB5 = document.getElementById("respuestaB5");
+opcionB5 = categoriaSeleccionada[preguntaRealizada5].respuestas[1];
+respuestaB5.innerHTML = opcionB5
+if(opcionB5==respuestaCorrectaPregunta5){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion C*/
+const respuestaC5 = document.getElementById("respuestaC5");
+opcionC5 = categoriaSeleccionada[preguntaRealizada5].respuestas[2]
+respuestaC5.innerHTML = opcionC5;
+if(opcionC5==respuestaCorrectaPregunta5){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+/* opcion D*/
+const respuestaD5 = document.getElementById("respuestaD5");
+opcionD5 = categoriaSeleccionada[preguntaRealizada5].respuestas[3]
+respuestaD5.innerHTML = opcionD5;
+if(opcionD5==respuestaCorrectaPregunta5){
+    console.log("es correcta")
+} else {
+    console.log("es incorrecta")
+}
+
+let contadorRespuestaCorrectas = 0;
 
 opcionesA.forEach((opcionA) => opcionA.addEventListener("click", e=> {
     e.preventDefault()
@@ -551,6 +838,12 @@ opcionesA.forEach((opcionA) => opcionA.addEventListener("click", e=> {
         pregunta2.classList.remove("hidden");
         quizNum.innerText = 2;
         console.log(quizNum.innerHTML)
+        if(opcionA1 == respuestaCorrectaPregunta1){
+            console.log("correcto");
+            contadorRespuestaCorrectas++;
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta2.classList.contains("answered")) {
         pregunta2.classList.add("hidden");
@@ -558,6 +851,12 @@ opcionesA.forEach((opcionA) => opcionA.addEventListener("click", e=> {
         pregunta3.classList.remove("hidden");
         quizNum.innerText = 3;
         console.log(quizNum.innerHTML)
+        if(opcionA2 == respuestaCorrectaPregunta2){
+            console.log("correcto");
+            contadorRespuestaCorrectas++;
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta3.classList.contains("answered")) {
         pregunta3.classList.add("hidden");
@@ -565,6 +864,12 @@ opcionesA.forEach((opcionA) => opcionA.addEventListener("click", e=> {
         pregunta4.classList.remove("hidden");
         quizNum.innerText = 4;
         console.log(quizNum.innerHTML)
+        if(opcionA3 == respuestaCorrectaPregunta3){
+            console.log("correcto");
+            contadorRespuestaCorrectas++;
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta4.classList.contains("answered")) {
         pregunta4.classList.add("hidden");
@@ -572,15 +877,30 @@ opcionesA.forEach((opcionA) => opcionA.addEventListener("click", e=> {
         pregunta5.classList.remove("hidden");
         quizNum.innerText = 5;
         console.log(quizNum.innerHTML)
+        if(opcionA4 == respuestaCorrectaPregunta4){
+            console.log("correcto");
+            contadorRespuestaCorrectas++;
+        } else {
+            console.log("incorrecto");
+        }
     }    
     else if(!pregunta5.classList.contains("answered")) {
         pregunta5.classList.add("hidden");
         pregunta5.classList.add("answered");
         question.classList.add("hidden");
-        congratulations.classList.remove("hidden");
+        if(opcionA5 == respuestaCorrectaPregunta5){
+            console.log("correcto");
+            contadorRespuestaCorrectas++;
+        } else {
+            console.log("incorrecto");
+        }
+        if(contadorRespuestaCorrectas==5) {
+            congratulations.classList.remove("hidden");
+        } else {
+            sorry.classList.remove("hidden");
+        }
     }
 }))
-
 
 opcionesB.forEach((opcionB) => opcionB.addEventListener("click", e=> {
     e.preventDefault()
@@ -595,6 +915,12 @@ opcionesB.forEach((opcionB) => opcionB.addEventListener("click", e=> {
         pregunta2.classList.remove("hidden");
         quizNum.innerText = 2;
         console.log(quizNum.innerHTML)
+        if(opcionB1 == respuestaCorrectaPregunta1){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta2.classList.contains("answered")) {
         pregunta2.classList.add("hidden");
@@ -602,6 +928,12 @@ opcionesB.forEach((opcionB) => opcionB.addEventListener("click", e=> {
         pregunta3.classList.remove("hidden");
         quizNum.innerText = 3;
         console.log(quizNum.innerHTML)
+        if(opcionB2 == respuestaCorrectaPregunta2){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta3.classList.contains("answered")) {
         pregunta3.classList.add("hidden");
@@ -609,6 +941,12 @@ opcionesB.forEach((opcionB) => opcionB.addEventListener("click", e=> {
         pregunta4.classList.remove("hidden");
         quizNum.innerText = 4;
         console.log(quizNum.innerHTML)
+        if(opcionB3 == respuestaCorrectaPregunta3){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta4.classList.contains("answered")) {
         pregunta4.classList.add("hidden");
@@ -616,13 +954,29 @@ opcionesB.forEach((opcionB) => opcionB.addEventListener("click", e=> {
         pregunta5.classList.remove("hidden");
         quizNum.innerText = 5;
         console.log(quizNum.innerHTML)
+        if(opcionB4 == respuestaCorrectaPregunta4){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }    
     else if(!pregunta5.classList.contains("answered")) {
         pregunta5.classList.add("hidden");
         pregunta5.classList.add("answered");
         question.classList.add("hidden");
-        congratulations.classList.remove("hidden");
-        clearInterval(timerd());
+        // clearInterval(timerd());
+        if(opcionB5 == respuestaCorrectaPregunta5){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
+        if(contadorRespuestaCorrectas==5) {
+            congratulations.classList.remove("hidden");
+        } else {
+            sorry.classList.remove("hidden");
+        }
     }
 }))
 
@@ -635,6 +989,12 @@ opcionesC.forEach((opcionC) => opcionC.addEventListener("click", e=> {
         pregunta2.classList.remove("hidden");
         quizNum.innerText = 2;
         console.log(quizNum.innerHTML)
+        if(opcionC1 == respuestaCorrectaPregunta1){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta2.classList.contains("answered")) {
         pregunta2.classList.add("hidden");
@@ -642,6 +1002,12 @@ opcionesC.forEach((opcionC) => opcionC.addEventListener("click", e=> {
         pregunta3.classList.remove("hidden");
         quizNum.innerText = 3;
         console.log(quizNum.innerHTML)
+        if(opcionC2 == respuestaCorrectaPregunta2){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta3.classList.contains("answered")) {
         pregunta3.classList.add("hidden");
@@ -649,6 +1015,12 @@ opcionesC.forEach((opcionC) => opcionC.addEventListener("click", e=> {
         pregunta4.classList.remove("hidden");
         quizNum.innerText = 4;
         console.log(quizNum.innerHTML)
+        if(opcionC3 == respuestaCorrectaPregunta3){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta4.classList.contains("answered")) {
         pregunta4.classList.add("hidden");
@@ -656,13 +1028,29 @@ opcionesC.forEach((opcionC) => opcionC.addEventListener("click", e=> {
         pregunta5.classList.remove("hidden");
         quizNum.innerText = 5;
         console.log(quizNum.innerHTML)
+        if(opcionC4 == respuestaCorrectaPregunta4){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }    
     else if(!pregunta5.classList.contains("answered")) {
         pregunta5.classList.add("hidden");
         pregunta5.classList.add("answered");
         question.classList.add("hidden");
-        congratulations.classList.remove("hidden");
-        clearInterval(timerd());
+        // clearInterval(timerd());
+        if(opcionC5 == respuestaCorrectaPregunta5){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
+        if(contadorRespuestaCorrectas==5) {
+            congratulations.classList.remove("hidden");
+        } else {
+            sorry.classList.remove("hidden");
+        }
     }  
 }))
 
@@ -675,6 +1063,12 @@ opcionesD.forEach((opcionD) => opcionD.addEventListener("click", e=> {
         pregunta2.classList.remove("hidden");
         quizNum.innerText = 2;
         console.log(quizNum.innerHTML)
+        if(opcionD1 == respuestaCorrectaPregunta1){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta2.classList.contains("answered")) {
         pregunta2.classList.add("hidden");
@@ -682,6 +1076,12 @@ opcionesD.forEach((opcionD) => opcionD.addEventListener("click", e=> {
         pregunta3.classList.remove("hidden");
         quizNum.innerText = 3;
         console.log(quizNum.innerHTML)
+        if(opcionD2 == respuestaCorrectaPregunta2){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta3.classList.contains("answered")) {
         pregunta3.classList.add("hidden");
@@ -689,6 +1089,12 @@ opcionesD.forEach((opcionD) => opcionD.addEventListener("click", e=> {
         pregunta4.classList.remove("hidden");
         quizNum.innerText = 4;
         console.log(quizNum.innerHTML)
+        if(opcionD3 == respuestaCorrectaPregunta3){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }
     else if(!pregunta4.classList.contains("answered")) {
         pregunta4.classList.add("hidden");
@@ -696,13 +1102,28 @@ opcionesD.forEach((opcionD) => opcionD.addEventListener("click", e=> {
         pregunta5.classList.remove("hidden");
         quizNum.innerText = 5;
         console.log(quizNum.innerHTML)
+        if(opcionD4 == respuestaCorrectaPregunta4){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
     }    
     else if(!pregunta5.classList.contains("answered")) {
         pregunta5.classList.add("hidden");
         pregunta5.classList.add("answered");
         question.classList.add("hidden");
-        congratulations.classList.remove("hidden");
-        clearInterval(timerd());
+        if(opcionD5 == respuestaCorrectaPregunta5){
+            contadorRespuestaCorrectas++;
+            console.log("correcto");
+        } else {
+            console.log("incorrecto");
+        }
+        if(contadorRespuestaCorrectas==5) {
+            congratulations.classList.remove("hidden");
+        } else {
+            sorry.classList.remove("hidden");
+        }
     }
 }))
 
@@ -740,282 +1161,3 @@ backPlay.addEventListener("click", e=> {
     sorry.classList.add("hidden");
     login.classList.remove("hidden");
 })
-
-/* preguntas a responder */
-                    
-                    let listaDePreguntasRealizadas = [];
-
-
-                    contNumeroRandom = 0;
-
-                    while(contNumeroRandom < 5 ) {
-                        let min = 1;
-                        let max = 20;
-                        let randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-                        if(!listaDePreguntasRealizadas.includes(randomNumber)) {
-                            listaDePreguntasRealizadas.push(randomNumber);
-                            contNumeroRandom++;
-                        }
-                    }
-                    console.log(listaDePreguntasRealizadas);
-                    // if(!listaDePreguntasRealizadas.includes(randomNumber)) {
-                    //     console.log("prosiga");
-                    // } else {
-                    //     console.log("se ejecuto esto")
-                    //     randomNumber;
-                    // }
-                    
-                    
-                    // console.log(preguntasDeportes[randomNumber].pregunta);
-                    // console.log(preguntasDeportes[randomNumber].respuestaCorrecta);
-                    // console.log(preguntasDeportes[randomNumber].respuestas[0]);
-                    // console.log(preguntasDeportes[randomNumber].respuestas[1]);
-                    // console.log(preguntasDeportes[randomNumber].respuestas[2]);
-                    // console.log(preguntasDeportes[randomNumber].respuestas[3]);
-                    
-                    
-                    /*-------------------------------------------------------------------------------------------------*/
-                    
-                    
-                    /* pregunta 1 */
-                    let preguntaRealizada1 = listaDePreguntasRealizadas[0];
-                    const preguntaNum1 = document.getElementById("pregunta1");
-                    preguntaNum1.innerHTML = "1. "+preguntasDeportes[preguntaRealizada1].pregunta;
-                    const respuestaCorrectaPregunta1 = preguntasDeportes[preguntaRealizada1].respuestaCorrecta;
-                    
-                    /* respuestas */
-                    /* opcion A*/
-                    const respuestaA1 = document.getElementById("respuestaA1");
-                    opcionA1 = preguntasDeportes[preguntaRealizada1].respuestas[0];
-                    respuestaA1.innerHTML = opcionA1 ;
-                    if(opcionA1 == respuestaCorrectaPregunta1){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion B*/
-                    const respuestaB1 = document.getElementById("respuestaB1");
-                    opcionB1 = preguntasDeportes[preguntaRealizada1].respuestas[1];
-                    respuestaB1.innerHTML = opcionB1;
-                    if(opcionB1==respuestaCorrectaPregunta1){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion C*/
-                    const respuestaC1 = document.getElementById("respuestaC1");
-                    opcionC1 = preguntasDeportes[preguntaRealizada1].respuestas[2]
-                    respuestaC1.innerHTML = opcionC1;
-                    if(opcionC1==respuestaCorrectaPregunta1){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion D*/
-                    const respuestaD1 = document.getElementById("respuestaD1");
-                    opcionD1 = preguntasDeportes[preguntaRealizada1].respuestas[3]
-                    respuestaD1.innerHTML = opcionD1;
-                    if(opcionD1==respuestaCorrectaPregunta1){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    /*---------------------------------------------------------------------------------------------------------*/
-                    
-                    /* pregunta 2*/
-                    let preguntaRealizada2 = listaDePreguntasRealizadas[1];
-                    const preguntaNum2 = document.getElementById("pregunta2");
-                    preguntaNum2.innerHTML = "2. "+preguntasDeportes[preguntaRealizada2].pregunta;
-                    const respuestaCorrectaPregunta2 = preguntasDeportes[preguntaRealizada2].respuestaCorrecta;
-                    
-                    /* respuestas */
-                    /* opcion A*/
-                    const respuestaA2 = document.getElementById("respuestaA2");
-                    opcionA2 = preguntasDeportes[preguntaRealizada2].respuestas[0];
-                    respuestaA2.innerHTML = opcionA2 ;
-                    if(opcionA2 ==respuestaCorrectaPregunta2){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion B*/
-                    const respuestaB2 = document.getElementById("respuestaB2");
-                    opcionB2 = preguntasDeportes[preguntaRealizada2].respuestas[1];
-                    respuestaB2.innerHTML = opcionB2;
-                    if(opcionB2==respuestaCorrectaPregunta2){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion C*/
-                    const respuestaC2 = document.getElementById("respuestaC2");
-                    opcionC2 = preguntasDeportes[preguntaRealizada2].respuestas[2]
-                    respuestaC2.innerHTML = opcionC2;
-                    if(opcionC2==respuestaCorrectaPregunta2){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion D*/
-                    const respuestaD2 = document.getElementById("respuestaD2");
-                    opcionD2 = preguntasDeportes[preguntaRealizada2].respuestas[3]
-                    respuestaD2.innerHTML = opcionD2;
-                    if(opcionD2==respuestaCorrectaPregunta2){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /*---------------------------------------------------------------------------------------------------------*/
-                    
-                    /* pregunta 3*/
-                    let preguntaRealizada3 = listaDePreguntasRealizadas[2];
-                    const preguntaNum3 = document.getElementById("pregunta3");
-                    preguntaNum3.innerHTML = "3. "+preguntasDeportes[preguntaRealizada3].pregunta;
-                    const respuestaCorrectaPregunta3 = preguntasDeportes[preguntaRealizada3].respuestaCorrecta;
-                    
-                    /* respuestas */
-                    /* opcion A*/
-                    const respuestaA3 = document.getElementById("respuestaA3");
-                    opcionA3 = preguntasDeportes[preguntaRealizada3].respuestas[0];
-                    respuestaA3.innerHTML = opcionA3 ;
-                    if(opcionA2 ==respuestaCorrectaPregunta3){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion B*/
-                    const respuestaB3 = document.getElementById("respuestaB3");
-                    opcionB3 = preguntasDeportes[preguntaRealizada3].respuestas[1];
-                    respuestaB3.innerHTML = opcionB3;
-                    if(opcionB3==respuestaCorrectaPregunta3){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion C*/
-                    const respuestaC3 = document.getElementById("respuestaC3");
-                    opcionC3 = preguntasDeportes[preguntaRealizada3].respuestas[2]
-                    respuestaC3.innerHTML = opcionC3;
-                    if(opcionC3==respuestaCorrectaPregunta3){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion D*/
-                    const respuestaD3 = document.getElementById("respuestaD3");
-                    opcionD3 = preguntasDeportes[preguntaRealizada3].respuestas[3]
-                    respuestaD3.innerHTML = opcionD3;
-                    if(opcionD3==respuestaCorrectaPregunta3){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /*---------------------------------------------------------------------------------------------------------*/
-                    
-                    /* pregunta 4*/
-                    let preguntaRealizada4 = listaDePreguntasRealizadas[3];
-                    const preguntaNum4 = document.getElementById("pregunta4");
-                    preguntaNum4.innerHTML = "4. "+preguntasDeportes[preguntaRealizada4].pregunta;
-                    const respuestaCorrectaPregunta4 = preguntasDeportes[preguntaRealizada4].respuestaCorrecta;
-                    
-                    /* respuestas */
-                    /* opcion A*/
-                    const respuestaA4 = document.getElementById("respuestaA4");
-                    opcionA4 = preguntasDeportes[preguntaRealizada4].respuestas[0]
-                    respuestaA4.innerHTML = opcionA4;
-                    if(opcionA4==respuestaCorrectaPregunta4){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion B*/
-                    const respuestaB4 = document.getElementById("respuestaB4");
-                    opcionB4 = preguntasDeportes[preguntaRealizada4].respuestas[1]
-                    respuestaB4.innerHTML = opcionB4;
-                    if(opcionB4==respuestaCorrectaPregunta4){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion C*/
-                    const respuestaC4 = document.getElementById("respuestaC4");
-                    opcionC4 = preguntasDeportes[preguntaRealizada4].respuestas[2]
-                    respuestaC4.innerHTML = opcionC4;
-                    if(opcionC4==respuestaCorrectaPregunta4){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion D*/
-                    const respuestaD4 = document.getElementById("respuestaD4");
-                    opcionD4 = preguntasDeportes[preguntaRealizada4].respuestas[3]
-                    respuestaD4.innerHTML = opcionD4;
-                    if(opcionD4==respuestaCorrectaPregunta4){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /*---------------------------------------------------------------------------------------------------------*/
-                    
-                    
-                    /* pregunta 5*/
-                    let preguntaRealizada5 = listaDePreguntasRealizadas[4];
-                    const preguntaNum5 = document.getElementById("pregunta5");
-                    preguntaNum5.innerHTML = "5. "+preguntasDeportes[preguntaRealizada5].pregunta;
-                    const respuestaCorrectaPregunta5 = preguntasDeportes[preguntaRealizada5].respuestaCorrecta;
-                    
-                    /* respuestas */
-                    /* opcion A*/
-                    const respuestaA5 = document.getElementById("respuestaA5");
-                    opcionA5 = preguntasDeportes[preguntaRealizada5].respuestas[0];
-                    respuestaA5.innerHTML = opcionA5 ;
-                    if(opcionA5 ==respuestaCorrectaPregunta5){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion B*/
-                    const respuestaB5 = document.getElementById("respuestaB5");
-                    opcionB5 = preguntasDeportes[preguntaRealizada5].respuestas[1];
-                    respuestaB5.innerHTML = opcionB5
-                    if(opcionB5==respuestaCorrectaPregunta5){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion C*/
-                    const respuestaC5 = document.getElementById("respuestaC5");
-                    opcionC5 = preguntasDeportes[preguntaRealizada5].respuestas[2]
-                    respuestaC5.innerHTML = opcionC5;
-                    if(opcionC5==respuestaCorrectaPregunta5){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }
-                    
-                    /* opcion D*/
-                    const respuestaD5 = document.getElementById("respuestaD5");
-                    opcionD5 = preguntasDeportes[preguntaRealizada5].respuestas[3]
-                    respuestaD5.innerHTML = opcionD5;
-                    if(opcionD5==respuestaCorrectaPregunta5){
-                        console.log("es correcta")
-                    } else {
-                        console.log("es incorrecta")
-                    }

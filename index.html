@@ -33,10 +33,10 @@
 
             <img src="img/quiz-logo.png" alt="logo">
             <div class="category">
-                <button id="deporte">Deporte</button>
-                <button id="videos-juegos">Videos Juegos</button>
-                <button id="historia">Historia</button>
-                <button id="series-peliculas">Series-Peliculas</button>
+                <button id="deporte">mathematics</button>
+                <button id="videos-juegos">music</button>
+                <button id="historia">entertainment</button>
+                <button id="series-peliculas">food and drink</button>
 
                 <!-- <button>Enviar</button> -->
             </div>
@@ -44,7 +44,7 @@
 
         <!---------------------------------------------------->
 
-        <div class="question hidden">
+        <div class="question">
             <h2>Deportes</h2>
             <div class="question-time">
                 <p>Quiz:<span id="quizNum"></span></p>
@@ -56,13 +56,13 @@
                 <p class="pregunta" id="pregunta1">   </p>
 
                 <div class="questions-list">
-                    <button class="a" id="respuestaA1"></button>
-                    <button class="b" id="respuestaB1"></button>
-                    <button class="c" id="respuestaC1"></button>
-                    <button class="d" id="respuestaD1"></button>
+                    <button class="respuestas1" id="respuestaA1"></button>
+                    <button class="respuestas1" id="respuestaB1"></button>
+                    <button class="respuestas1" id="respuestaC1"></button>
+                    <button class="respuestas1" id="respuestaD1"></button>
                 </div>
             </div>
-
+            <!--
             <div class="preguntaNumero2 hidden">
                 <p class="pregunta" id="pregunta2">   </p>
 
@@ -102,7 +102,7 @@
                     <button class="c" id="respuestaC5"></button>
                     <button class="d" id="respuestaD5"></button>
                 </div>
-            </div>
+            </div>-->
         </div>
 
         <!-- Quiz end -->
@@ -191,6 +191,103 @@
         <!-- Users List end -->
 
     </main>
+
+    <script>
+
+const pregunta1 = document.getElementById("pregunta1");
+const respuesta1 = document.getElementById("respuestaPregunta1");
+const enviarRespuesta1 = document.getElementById("enviar-respuesta-1");
+
+const respuestaA1 = document.getElementById("respuestaA1");
+const respuestaB1 = document.getElementById("respuestaB1");
+const respuestaC1 = document.getElementById("respuestaC1");
+const respuestaD1 = document.getElementById("respuestaD1");
+/*
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '0fe77cce43msh1b8f1c7cf1e94b2p1198fbjsnfd8e09c6b25e',
+		'X-RapidAPI-Host': 'trivia-by-api-ninjas.p.rapidapi.com'
+	}
+};
+
+fetch('https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia?category=music', options)
+	.then(response => response.json())
+	.then(response => {
+        console.log(response[0].category)
+        console.log(response[0].answer)
+        pregunta1.innerHTML = response[0].question
+        let respuestaCorrecta = response[0].answer
+        enviarRespuesta1.addEventListener("click", e=> {
+            if(respuesta1.value== response[0].answer) {
+            console.log("correcta");
+            } else {
+                console.log("incorrecta");
+            }
+        })
+    })
+	.catch(err => console.error(err));*/
+
+    fetch('https://the-trivia-api.com/api/questions?limit=20&categories=history')
+    .then(response => response.json())
+    .then(datos => {
+        listaNumerosRandoms = [];
+        while(listaNumerosRandoms.length<4) {
+            let min = 0;
+            let max = 3;
+            let numeroRandom = Math.floor(Math.random() * (max - min + 1) + min);
+            if(!listaNumerosRandoms.includes(numeroRandom)) {
+                listaNumerosRandoms.push(numeroRandom);
+            }
+        }
+        console.log(listaNumerosRandoms);
+        console.log(datos);
+        console.log(datos[0].question);
+        console.log(datos[0].correctAnswer);
+        console.log(datos[0].incorrectAnswers);
+        let respuestaCorrecta = datos[0].correctAnswer;
+        let listaDePreguntas= datos[0].incorrectAnswers;
+        listaDePreguntas.push(datos[0].correctAnswer);
+        console.log(listaDePreguntas);
+        pregunta1.innerHTML = datos[0].question;
+        respuestaA1.innerHTML = listaDePreguntas[listaNumerosRandoms[0]];
+        respuestaB1.innerHTML = listaDePreguntas[listaNumerosRandoms[1]];
+        respuestaC1.innerHTML = listaDePreguntas[listaNumerosRandoms[2]];
+        respuestaD1.innerHTML = listaDePreguntas[listaNumerosRandoms[3]];
+
+
+        const respuestas = document.querySelectorAll(".respuestas1");
+
+        respuestas.forEach((respuesta) => respuesta.addEventListener("click", e=> {
+            if(respuesta.innerHTML == respuestaCorrecta)
+                console.log("correcto")
+            else {
+                console.log("incorrecto")
+            }
+            listaNumerosRandoms = [];
+            while(listaNumerosRandoms.length<4) {
+                let min = 0;
+                let max = 3;
+                let numeroRandom = Math.floor(Math.random() * (max - min + 1) + min);
+                if(!listaNumerosRandoms.includes(numeroRandom)) {
+                    listaNumerosRandoms.push(numeroRandom);
+            }
+        }
+            quizNum.innerText = 2;
+            pregunta1.innerHTML = datos[1].question;
+            let listaDePreguntas= datos[1].incorrectAnswers;
+            console.log(listaDePreguntas);
+            console.log(listaNumerosRandoms);
+            listaDePreguntas.push(datos[1].correctAnswer);
+            respuestaA1.innerHTML = listaDePreguntas[listaNumerosRandoms[0]];
+            respuestaB1.innerHTML = listaDePreguntas[listaNumerosRandoms[1]];
+            respuestaC1.innerHTML = listaDePreguntas[listaNumerosRandoms[2]];
+            respuestaD1.innerHTML = listaDePreguntas[listaNumerosRandoms[3]];
+        }))
+
+    });
+
+    </script>
 </body>
 
 <script src="js/main.js"></script>
