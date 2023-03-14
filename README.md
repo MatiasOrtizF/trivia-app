@@ -1,1 +1,1 @@
-Proyecto en proceso, falta contectarlo a base de datos para el raking, poder seleccionar la categoria.
+Proyecto en proceso, falta todo lo relazionado a la base de datos.
