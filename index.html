@@ -23,29 +23,29 @@
                 <button type="submit">Entrar</button>
             </form>
         </div>
-        <!-- login end -->
+        <!-- login fin -->
 
         <!---------------------------------------------------->
 
-        <!-- Quiz -->
-        <div class="select-categorys hidden">
+        <!-- Seleccionar categoria -->
+        <div class="select-categorys">
             <h1>Quiz App</h1>
 
             <img src="img/quiz-logo.png" alt="logo">
             <div class="category">
-                <button id="deporte">mathematics</button>
-                <button id="videos-juegos">music</button>
-                <button id="historia">entertainment</button>
-                <button id="series-peliculas">food and drink</button>
-
-                <!-- <button>Enviar</button> -->
+                <button class="categoria">History</button>
+                <button class="categoria">Music</button>
+                <button class="categoria">Food & Drink</button>
+                <button class="categoria">Film & Tv</button>
             </div>
         </div>
+        <!-- Selecionar categoria fin -->
 
         <!---------------------------------------------------->
 
-        <div class="question">
-            <h2>Deportes</h2>
+        <!-- Pregunta -->
+        <div class="questions hidden">
+            <h2 id="categoria-seleccionada"></h2>
             <div class="question-time">
                 <p>Quiz:<span id="quizNum"></span></p>
                 <p id="seconds"></p>
@@ -53,63 +53,22 @@
             <hr>
 
             <div class="preguntaNumero1 ">
-                <p class="pregunta" id="pregunta1">   </p>
+                <p class="pregunta" id="question"></p>
 
                 <div class="questions-list">
-                    <button class="respuestas1" id="respuestaA1"></button>
-                    <button class="respuestas1" id="respuestaB1"></button>
-                    <button class="respuestas1" id="respuestaC1"></button>
-                    <button class="respuestas1" id="respuestaD1"></button>
+                    <button class="answer" id="answerA" ></button>
+                    <button class="answer" id="answerB" ></button>
+                    <button class="answer" id="answerC" ></button>
+                    <button class="answer" id="answerD" ></button>
                 </div>
             </div>
-            <!--
-            <div class="preguntaNumero2 hidden">
-                <p class="pregunta" id="pregunta2">   </p>
 
-                <div class="questions-list">
-                    <button class="a" id="respuestaA2"></button>
-                    <button class="b" id="respuestaB2"></button>
-                    <button class="c" id="respuestaC2"></button>
-                    <button class="d" id="respuestaD2"></button>
-                </div>
-            </div>
-            <div class="preguntaNumero3 hidden">
-                <p class="pregunta" id="pregunta3">   </p>
-
-                <div class="questions-list">
-                    <button class="a" id="respuestaA3"></button>
-                    <button class="b" id="respuestaB3"></button>
-                    <button class="c" id="respuestaC3"></button>
-                    <button class="d" id="respuestaD3"></button>
-                </div>
-            </div>
-            <div class="preguntaNumero4 hidden">
-                <p class="pregunta" id="pregunta4">   </p>
-
-                <div class="questions-list">
-                    <button class="a" id="respuestaA4"></button>
-                    <button class="b" id="respuestaB4"></button>
-                    <button class="c" id="respuestaC4"></button>
-                    <button class="d" id="respuestaD4"></button>
-                </div>
-            </div>
-            <div class="preguntaNumero5 hidden">
-                <p class="pregunta" id="pregunta5">   </p>
-
-                <div class="questions-list">
-                    <button class="a" id="respuestaA5"></button>
-                    <button class="b" id="respuestaB5"></button>
-                    <button class="c" id="respuestaC5"></button>
-                    <button class="d" id="respuestaD5"></button>
-                </div>
-            </div>-->
         </div>
-
-        <!-- Quiz end -->
+        <!-- Pregunta fin -->
 
         <!---------------------------------------------------->
 
-        <!-- Contragulations or Sorry -->
+        <!-- Entro o no al ranking -->
 
         <div class="congratulations hidden">
             <p>Felicidades <span class="name"></span>Matias respondiste las 5 preguntas correctamente entraste en el raking</p>
@@ -121,11 +80,11 @@
             <button id="back-play">Volver a jugar</button>
         </div>
 
-        <!-- Congragulations or Sorry end -->
+        <!-- Entro o no al ranking fin -->
 
         <!---------------------------------------------------->
 
-        <!-- List Users -->
+        <!-- Lista de usuarios -->
 
 
         <div class="users-list hidden">
@@ -188,106 +147,9 @@
             </div>
         </div>
 
-        <!-- Users List end -->
+        <!-- Lista de usuarios fin -->
 
     </main>
-
-    <script>
-
-const pregunta1 = document.getElementById("pregunta1");
-const respuesta1 = document.getElementById("respuestaPregunta1");
-const enviarRespuesta1 = document.getElementById("enviar-respuesta-1");
-
-const respuestaA1 = document.getElementById("respuestaA1");
-const respuestaB1 = document.getElementById("respuestaB1");
-const respuestaC1 = document.getElementById("respuestaC1");
-const respuestaD1 = document.getElementById("respuestaD1");
-/*
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '0fe77cce43msh1b8f1c7cf1e94b2p1198fbjsnfd8e09c6b25e',
-		'X-RapidAPI-Host': 'trivia-by-api-ninjas.p.rapidapi.com'
-	}
-};
-
-fetch('https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia?category=music', options)
-	.then(response => response.json())
-	.then(response => {
-        console.log(response[0].category)
-        console.log(response[0].answer)
-        pregunta1.innerHTML = response[0].question
-        let respuestaCorrecta = response[0].answer
-        enviarRespuesta1.addEventListener("click", e=> {
-            if(respuesta1.value== response[0].answer) {
-            console.log("correcta");
-            } else {
-                console.log("incorrecta");
-            }
-        })
-    })
-	.catch(err => console.error(err));*/
-
-    fetch('https://the-trivia-api.com/api/questions?limit=20&categories=history')
-    .then(response => response.json())
-    .then(datos => {
-        listaNumerosRandoms = [];
-        while(listaNumerosRandoms.length<4) {
-            let min = 0;
-            let max = 3;
-            let numeroRandom = Math.floor(Math.random() * (max - min + 1) + min);
-            if(!listaNumerosRandoms.includes(numeroRandom)) {
-                listaNumerosRandoms.push(numeroRandom);
-            }
-        }
-        console.log(listaNumerosRandoms);
-        console.log(datos);
-        console.log(datos[0].question);
-        console.log(datos[0].correctAnswer);
-        console.log(datos[0].incorrectAnswers);
-        let respuestaCorrecta = datos[0].correctAnswer;
-        let listaDePreguntas= datos[0].incorrectAnswers;
-        listaDePreguntas.push(datos[0].correctAnswer);
-        console.log(listaDePreguntas);
-        pregunta1.innerHTML = datos[0].question;
-        respuestaA1.innerHTML = listaDePreguntas[listaNumerosRandoms[0]];
-        respuestaB1.innerHTML = listaDePreguntas[listaNumerosRandoms[1]];
-        respuestaC1.innerHTML = listaDePreguntas[listaNumerosRandoms[2]];
-        respuestaD1.innerHTML = listaDePreguntas[listaNumerosRandoms[3]];
-
-
-        const respuestas = document.querySelectorAll(".respuestas1");
-
-        respuestas.forEach((respuesta) => respuesta.addEventListener("click", e=> {
-            if(respuesta.innerHTML == respuestaCorrecta)
-                console.log("correcto")
-            else {
-                console.log("incorrecto")
-            }
-            listaNumerosRandoms = [];
-            while(listaNumerosRandoms.length<4) {
-                let min = 0;
-                let max = 3;
-                let numeroRandom = Math.floor(Math.random() * (max - min + 1) + min);
-                if(!listaNumerosRandoms.includes(numeroRandom)) {
-                    listaNumerosRandoms.push(numeroRandom);
-            }
-        }
-            quizNum.innerText = 2;
-            pregunta1.innerHTML = datos[1].question;
-            let listaDePreguntas= datos[1].incorrectAnswers;
-            console.log(listaDePreguntas);
-            console.log(listaNumerosRandoms);
-            listaDePreguntas.push(datos[1].correctAnswer);
-            respuestaA1.innerHTML = listaDePreguntas[listaNumerosRandoms[0]];
-            respuestaB1.innerHTML = listaDePreguntas[listaNumerosRandoms[1]];
-            respuestaC1.innerHTML = listaDePreguntas[listaNumerosRandoms[2]];
-            respuestaD1.innerHTML = listaDePreguntas[listaNumerosRandoms[3]];
-        }))
-
-    });
-
-    </script>
 </body>
 
 <script src="js/main.js"></script>

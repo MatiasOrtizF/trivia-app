@@ -80,11 +80,11 @@ form {
 
 
 /* Questions */
-.question {
+.questions {
     width: 250px;
 }
 
-.question button {
+.questions button {
     color: black;
     padding: 10px;
 }
