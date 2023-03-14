@@ -30,6 +30,7 @@ const usersList = document.querySelector(".users-list");
 const backToPlay = document.getElementById("back-play");
 const sorry = document.querySelector(".sorry");
 
+const nameUser = document.querySelector(".name");
 
 /* login */
 form.addEventListener("submit", e=> {
@@ -37,6 +38,7 @@ form.addEventListener("submit", e=> {
     if(userName.value.length>=4) {
         login.classList.add("hidden");
         selectedCategory.classList.remove("hidden");
+        nameUser.innerHTML = userName.value;
     }
 })
 
@@ -68,8 +70,6 @@ function cargaApi() {
     .then(response => response.json())
     .then(data => {
 
-        console.log(data)
-
         if(contadorsss==5) {
             question.classList.add("hidden");
             
@@ -96,7 +96,6 @@ function cargaApi() {
             }
 
         }
-        console.log(listaNumerosRandoms)
 
         answerA.innerHTML = listaDePreguntas[listaNumerosRandoms[0]];
         answerB.innerHTML = listaDePreguntas[listaNumerosRandoms[1]];
@@ -105,13 +104,14 @@ function cargaApi() {
     
     }
 
+    let cantCorrectAnswer = 0;
     preguntasRespuestas();
-    console.log(preguntasRespuestas(correctAnswer))
 
         answers.forEach((answer) => answer.addEventListener ("click", e=> {
             if(answer.innerHTML == correctAnswer) {
                 console.log("correct")
                 contadorsss++;
+                cantCorrectAnswer++;
             } else {
                 console.log("incorrect")
                 contadorsss++;
@@ -121,7 +121,12 @@ function cargaApi() {
             }
             if(contadorsss==5) {
                 question.classList.add("hidden");
-                sorry.classList.remove("hidden");
+                if(cantCorrectAnswer!=5) {
+                    sorry.classList.remove("hidden");
+                } else {
+                    congratulations.classList.remove("hidden");
+                }
+                console.log("cantida de respondidas:"+cantCorrectAnswer);
             }
         }) ) 
 
@@ -164,3 +169,4 @@ backToPlay.addEventListener("click", e=> {
     sorry.classList.add("hidden");
     login.classList.remove("hidden");
 })
+
